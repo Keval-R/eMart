@@ -1,0 +1,6 @@
+<ng-template [ngIf]="orderStatus == 'true'">
+  <H1 class="text-center">Thank you for order</H1>
+</ng-template>
+<ng-template [ngIf]="orderStatus === 'false'">
+  <H1 class="text-center">Payment not paid</H1>
+</ng-template>

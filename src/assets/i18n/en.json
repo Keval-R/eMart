@@ -1,0 +1,21 @@
+{
+    "title":"eMart",
+    "header": "With an outstanding style, only for you",
+    "description": "Exclusively designed for you",
+    "shoes" : "Shoes",
+    "artNumber" : "Art Number",
+    "brandName" : "Brand Name",
+    "modalNumber" : "Modal Number",
+    "price" : "Price",
+    "addToCart":"Add to Cart",
+    "removeProduct": " Remove Product",
+    "cart":"Cart",
+    "previousOrder":"Previous Order",
+    "checkout" : "Checkout",
+    "quantity":"Quantity",
+    "name":"Name",
+    "contactUs":"Contact Us",
+    "mobileNumber" : "Mobile number",
+    "emptyCart": "No any item in cart"
+
+}

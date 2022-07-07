@@ -1,0 +1,210 @@
+<div class="register-page">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-xxl-6 col-md-6 col-sm-0 bg-img d-none d-sm-none d-md-block">
+        <!-- <img src="assets/login_poster.png" alt="img"/> -->
+      </div>
+      <div class="col-xxl-6 col-md-6 col-sm-12">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center full-height">
+          <div>
+            <h2>Register User</h2>
+          </div>
+          <form [formGroup]="regForm" (ngSubmit)="submit()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted ||
+                    (regForm.controls['email'].touched &&
+                      regForm.controls['email'].errors),
+                  'is-valid':
+                    submitted ||
+                    (regForm.controls['email'].touched &&
+                      regForm.controls['email'].errors == null)
+                }" />
+
+              <div
+                *ngIf="submitted || regForm.controls['email'].touched && regForm.controls['email'].errors?.['required']"
+                class="invalid-feedback">
+                Email Id is required.
+              </div>
+              <div
+                *ngIf="submitted || regForm.controls['email'].touched && regForm.controls['email'].errors?.['email'] || regForm.controls['email'].errors?.['pattern']"
+                class="invalid-feedback">
+                Email Id is invalid.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                formControlName="password"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted ||
+                    (regForm.controls['password'].touched &&
+                      regForm.controls['password'].errors),
+                  'is-valid':
+                    submitted ||
+                    (regForm.controls['password'].touched &&
+                      regForm.controls['password'].errors == null)
+                }" />
+              <div
+                *ngIf=" submitted ||regForm.controls['password'].touched && regForm.controls['password'].errors?.['required']"
+                class="invalid-feedback">
+                Password Id is required.
+              </div>
+              <div
+                *ngIf="submitted || regForm.controls['password'].touched && regForm.controls['password'].errors?.['minlength']"
+                class="invalid-feedback">
+                Password min length is 3 word.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                formControlName="passwordConfirm"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted ||
+                    (regForm.controls['passwordConfirm'].touched &&
+                      regForm.controls['passwordConfirm'].errors),
+                  'is-valid':
+                    submitted ||
+                    (regForm.controls['passwordConfirm'].touched &&
+                      regForm.controls['passwordConfirm'].errors == null)
+                }" />
+              <div
+                *ngIf=" submitted || regForm.controls['passwordConfirm'].touched && regForm.controls['passwordConfirm'].errors?.['required']"
+                class="invalid-feedback">
+                Confirm Password Id is required.
+              </div>
+              <div
+                *ngIf=" submitted || regForm.controls['passwordConfirm'].touched && regForm.controls['passwordConfirm'].errors?.['minlength']"
+                class="invalid-feedback">
+                Confirm Password min length is 3 word.
+              </div>
+
+              <div
+                *ngIf=" submitted || regForm.controls['passwordConfirm'].touched  &&regForm.controls['passwordConfirm'].errors?.['notSame']"
+                class="invalid-feedback">
+                Confirm password not match with password.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputmobile" class="form-label"
+                >Mobile Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputmobile"
+                formControlName="mobile"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted ||
+                    (regForm.controls.mobile.touched &&
+                      regForm.controls.mobile.errors),
+                  'is-valid':
+                    submitted ||
+                    (regForm.controls.mobile.touched &&
+                      regForm.controls.mobile.errors == null)
+                }" />
+
+              <div
+                *ngIf="
+                  submitted ||
+                  (regForm.controls.mobile.touched &&
+                    regForm.controls.mobile.errors?.required)
+                "
+                class="invalid-feedback">
+                Mobile is required.
+              </div>
+
+              <div
+                *ngIf="
+                  submitted ||
+                  (regForm.controls.mobile.touched &&
+                    regForm.controls.mobile.errors?.pattern == undefined &&
+                    regForm.controls.mobile.errors?.minlength) ||
+                  regForm.controls.mobile.errors?.maxlength
+                "
+                class="invalid-feedback">
+                Only allow 10 digit.
+              </div>
+
+              <div
+                *ngIf="
+                  submitted ||
+                  (regForm.controls.mobile.touched &&
+                    regForm.controls.mobile.errors?.pattern)
+                "
+                class="invalid-feedback">
+                Only allow digit.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputaddreess" class="form-label"
+                >Address</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleInputaddreess"
+                formControlName="address"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted ||
+                    (regForm.controls.address.touched &&
+                      regForm.controls.address.errors),
+                  'is-valid':
+                    submitted ||
+                    (regForm.controls.address.touched &&
+                      regForm.controls.address.errors == null)
+                }"></textarea>
+              <div
+                *ngIf="
+                  submitted ||
+                  (regForm.controls.address.touched &&
+                    regForm.controls.address.errors?.required)
+                "
+                class="invalid-feedback">
+                Address is required.
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="!regForm.valid">
+                Submit
+              </button>
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+              <label (click)="loginUser()">Login User?</label>
+              <label (click)="forgotPassword()">Forgot Password?</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

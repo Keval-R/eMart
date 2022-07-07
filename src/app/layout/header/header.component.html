@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pt-2" id="navbarTogglerDemo01">
+      <div class="d-flex justify-content-between w-100">
+        <div>
+          <a class="navbar-brand" href="#">{{'title' | translate}}</a>
+        </div>
+
+        <div
+          class="d-flex justify-content-between d-none d-sm-none d-md-none d-lg-block">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item mx-2">
+              <select class="form-select" [value]="language" (change)="setLanguage($event.target)">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+              </select>
+            </li>
+             <li class="nav-item mx-2" (click)="viewContact()">
+              <fa-icon [icon]="icon1"></fa-icon>
+            </li>
+            <li class="nav-item mx-2 position-relative" (click)="viewCart()">
+              <fa-icon [icon]="icon2"></fa-icon>
+              <span
+                class="fa-layers-counter position-absolute icon"
+                *ngIf="cartService.getData().length > 0"></span>
+            </li>
+            <!-- <li class="nav-item mx-2">
+              <fa-icon [icon]="icon3"></fa-icon>
+            </li> -->
+            <li class="nav-item mx-2">
+              <fa-icon [icon]="icon4" (click)="logout()"></fa-icon>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex d-sm-block d-md-block d-lg-none mt-3">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-start">
+          <li class="nav-item mx-2">
+            <select class="form-select" [value]="language" (change)="setLanguage($event.target)">
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+            </select>
+          </li>
+          <li class="nav-item my-2" (click)="viewContact()">
+            <fa-icon [icon]="icon1"></fa-icon>
+          </li>
+          <li class="nav-item position-relative" (click)="viewCart()">
+            <fa-icon [icon]="icon2"></fa-icon>
+            <span class="fa-layers-counter position-absolute icon"></span>
+          </li>
+          <!-- <li class="nav-item my-2">
+            <fa-icon [icon]="icon3"></fa-icon>
+          </li> -->
+          <li class="nav-item my-2">
+            <fa-icon [icon]="icon4" (click)="logout()"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

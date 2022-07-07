@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <ng-template [ngIf]="isLoggedIn == 'true'">
+    <app-header></app-header>
+  </ng-template>
+
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+  <ng-template [ngIf]="isLoggedIn == 'true'">
+    <app-fotter></app-fotter>
+  </ng-template>
+</div>

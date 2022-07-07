@@ -1,0 +1,23 @@
+.register-page {
+  .container {
+    background-color: #e5e5e5;
+    height: 100vh;
+  }
+
+  .bg-img {
+    background-image: url('../../../assets/sing_up.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .welcome {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .full-height {
+    height: 100vh;
+  }
+}

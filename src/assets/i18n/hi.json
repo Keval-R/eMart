@@ -1,0 +1,21 @@
+{
+    "title":"ईमार्ट",
+    "header": "उत्कृष्ट शैली के साथ, केवल आपके लिए",
+    "description": "विशेष रूप से आपके लिए डिज़ाइन किया गया",
+    "shoes" : "जूते",
+    "artNumber" : "कला संख्या",
+    "brandName" : "ब्रांड का नाम",
+    "modalNumber" : "मॉडल संख्या",
+    "price" : "कीमत",
+    "addToCart":"कार्ट में डालें",
+    "removeProduct":"उत्पाद निकालें",
+    "cart":"कार्ट",
+    "previousOrder":"पिछला आदेश",
+    "checkout" : "चेक आउट",
+    "quantity":"मात्रा",
+    "name":"नाम",
+    "mobileNumber" : "मोबाइल नंबर",
+    "contactUs":"संपर्क करें",
+    "emptyCart": "कार्ट में कोई आइटम नहीं"
+    
+}
